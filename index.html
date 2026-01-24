@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>MagicBank University | Facultades</title>
+  <title>MagicBank | Ecosistema educativo guiado por IA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -15,67 +15,13 @@
       --dorado: #D6B15A;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--azul-profundo);
       color: var(--blanco);
       line-height: 1.6;
-      padding-top: 80px;
-    }
-
-    /* MENÚ */
-    .menu-btn {
-      position: fixed;
-      top: 16px;
-      left: 16px;
-      background: rgba(214,177,90,0.25);
-      border: 1px solid rgba(214,177,90,0.5);
-      color: var(--dorado);
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-weight: 600;
-      cursor: pointer;
-      z-index: 10000;
-    }
-
-    .menu-panel {
-      position: fixed;
-      top: 0;
-      left: -280px;
-      width: 260px;
-      height: 100vh;
-      background: rgba(7,12,42,0.97);
-      padding: 90px 20px;
-      transition: left .3s ease;
-      z-index: 9999;
-      box-shadow: 8px 0 25px rgba(0,0,0,0.6);
-    }
-
-    .menu-panel.open {
-      left: 0;
-    }
-
-    .menu-panel a {
-      display: block;
-      color: var(--gris);
-      text-decoration: none;
-      margin-bottom: 14px;
-      font-size: 14px;
-    }
-
-    .menu-panel a:hover {
-      color: var(--dorado);
-    }
-
-    .menu-divider {
-      margin: 20px 0;
-      border-top: 1px solid rgba(255,255,255,0.15);
     }
 
     header {
@@ -85,56 +31,135 @@
     nav {
       max-width: 1200px;
       margin: auto;
-      padding: 18px 28px;
+      padding: 22px 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    nav .logo {
+    .logo {
       font-weight: 600;
       letter-spacing: 1px;
     }
 
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 60px 28px;
+    .menu {
+      display: flex;
+      gap: 18px;
+      align-items: center;
     }
 
-    h2 {
-      font-size: 26px;
-      margin-bottom: 20px;
+    .menu a {
+      color: var(--gris);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .menu a:hover {
       color: var(--dorado);
+    }
+
+    .language select {
+      background: #070C2A;
+      border: 1px solid var(--dorado);
+      color: var(--dorado);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    .hero-visual {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 0 40px rgba(214,177,90,0.35);
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 24px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: var(--gris);
+      margin-bottom: 30px;
+    }
+
+    .hero a {
+      display: inline-block;
+      margin-right: 12px;
+      padding: 14px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .btn-main {
+      background: var(--dorado);
+      color: #1a1a1a;
+    }
+
+    .btn-sec {
+      border: 1px solid var(--dorado);
+      color: var(--dorado);
+    }
+
+    /* ==== TUTORES ==== */
+
+    .tutores {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 24px;
+    }
+
+    .tutores h2 {
+      color: var(--dorado);
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 26px;
     }
 
     .card {
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.05);
       border-radius: 16px;
-      padding: 30px;
-      margin-bottom: 26px;
+      padding: 26px;
     }
 
     .card h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
       color: var(--dorado);
+      margin-bottom: 10px;
     }
 
     .card p {
       color: var(--gris);
-      margin-bottom: 18px;
+      font-size: 14px;
+      margin-bottom: 16px;
     }
 
-    .btn-dorado {
+    .card a {
       display: inline-block;
-      padding: 14px 34px;
-      background-color: var(--dorado);
-      color: #1A1A1A;
-      font-weight: 600;
-      font-size: 15px;
-      border-radius: 10px;
+      padding: 12px 18px;
+      background: var(--dorado);
+      color: #1a1a1a;
+      border-radius: 8px;
       text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
     }
 
     footer {
@@ -149,86 +174,113 @@
 
 <body>
 
-<div class="menu-btn" onclick="toggleMenu()">☰ Menú</div>
-
-<div class="menu-panel" id="menu">
-  <a href="https://magicbank.org">Inicio</a>
-  <a href="https://academy.magicbank.org/">Academy</a>
-  <a href="https://magicbank.org/fabrica-de-tutores.html">Fábrica de Tutores</a>
-
-  <div class="menu-divider"></div>
-
-  <!-- Selector de idioma -->
-  <a href="#" onclick="setLanguage('es')">🇪🇸 Español</a>
-  <a href="#" onclick="setLanguage('zh')">🇨🇳 中文 (Chino)</a>
-</div>
-
 <header>
   <nav>
-    <div class="logo">MAGICBANK UNIVERSITY</div>
+    <div class="logo">MAGICBANK</div>
+
+    <div class="menu">
+      <a href="https://magicbank.org">Inicio</a>
+      <a href="https://gustpuert.github.io/university.magicbank.org/">University</a>
+      <a href="https://academy.magicbank.org">Academy</a>
+      <a href="https://gustpuert.github.io/magicbank.org/fabrica-de-tutores-pago.html">Fábrica</a>
+
+      <div class="language">
+        <select onchange="translatePage(this.value)">
+          <option value="">🌍 Español</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+          <option value="pt">Português</option>
+          <option value="it">Italiano</option>
+          <option value="de">Deutsch</option>
+          <option value="zh-CN">中文</option>
+        </select>
+      </div>
+    </div>
   </nav>
 </header>
 
-<section>
-  <h2>🏛 Facultades</h2>
+<section class="hero-visual">
+  <img src="assets/img/hero/aula-magicbank-oficial.png" alt="MagicBank Aula">
+</section>
 
-  <div class="card">
-    <h3>Administración y Negocios</h3>
-    <p>Gestión, estrategia y liderazgo empresarial.</p>
-    <a class="btn-dorado" href="https://chatgpt.com/g/g-6934d1a2900c8191ab3aafa382225a65-superadministrador-magic-tutor-pro" target="_blank">
-      Entrar al Tutor
-    </a>
-  </div>
+<section class="hero">
+  <h1>Educación guiada por Inteligencia Artificial</h1>
+  <p>
+    MagicBank es un ecosistema educativo donde cada estudiante aprende con tutores
+    inteligentes que se adaptan a su nivel, ritmo y objetivos profesionales.
+  </p>
 
-  <div class="card">
-    <h3>Derecho</h3>
-    <p>Formación jurídica y análisis normativo.</p>
-    <a class="btn-dorado" href="https://chatgpt.com/g/g-69345443f0848191996abc2cf7cc9786-abogadus-magic-tutor-pro" target="_blank">
-      Entrar al Tutor
-    </a>
-  </div>
+  <a class="btn-main" href="https://gustpuert.github.io/magicbank--demo/">Visita guiada</a>
+  <a class="btn-sec" href="https://academy.magicbank.org">Academy</a>
+</section>
 
-  <div class="card">
-    <h3>Contaduría</h3>
-    <p>Contabilidad, impuestos y finanzas.</p>
-    <a class="btn-dorado" href="https://chatgpt.com/g/g-6934af28002481919dd9799d7156869f-supercontador-magic-tutor-pro" target="_blank">
-      Entrar al Tutor
-    </a>
-  </div>
+<section class="tutores">
+  <h2>Tutores Disponibles</h2>
 
-  <div class="card">
-    <h3>Marketing Digital</h3>
-    <p>Estrategia, crecimiento y posicionamiento.</p>
-    <a class="btn-dorado" href="https://chatgpt.com/g/g-693703fa8a008191b91730375fcc4d64-supermarketer-magic-tutor-pro" target="_blank">
-      Entrar al Tutor
-    </a>
-  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Administración & Negocios</h3>
+      <p>Gestión empresarial, liderazgo y estrategia.</p>
+      <a href="https://chatgpt.com/g/g-6934d1a2900c8191ab3aafa382225a65">Entrar</a>
+    </div>
 
-  <div class="card">
-    <h3>Desarrollo de Software</h3>
-    <p>Programación, lógica y arquitectura.</p>
-    <a class="btn-dorado" href="https://chatgpt.com/g/g-69356a835d888191bf80e11a11e39e2e-super-desarrollador-magic-tutor-pro" target="_blank">
-      Entrar al Tutor
-    </a>
+    <div class="card">
+      <h3>Derecho</h3>
+      <p>Análisis legal, normativas y práctica jurídica.</p>
+      <a href="https://chatgpt.com/g/g-69345443f0848191996abc2cf7cc9786">Entrar</a>
+    </div>
+
+    <div class="card">
+      <h3>Contaduría</h3>
+      <p>Contabilidad, impuestos y finanzas.</p>
+      <a href="https://chatgpt.com/g/g-6934af28002481919dd9799d7156869f">Entrar</a>
+    </div>
+
+    <div class="card">
+      <h3>Marketing Digital</h3>
+      <p>Publicidad, ventas y posicionamiento.</p>
+      <a href="https://chatgpt.com/g/g-693703fa8a008191b91730375fcc4d64">Entrar</a>
+    </div>
+
+    <div class="card">
+      <h3>Programación</h3>
+      <p>Desarrollo de software y lógica.</p>
+      <a href="https://chatgpt.com/g/g-69356a835d888191bf80e11a11e39e2e">Entrar</a>
+    </div>
   </div>
 </section>
 
 <footer>
-  <p>© MagicBank University — Formación profesional impulsada por IA</p>
+  MagicBank © Plataforma educativa impulsada por Inteligencia Artificial
 </footer>
 
-<script>
-  function toggleMenu() {
-    document.getElementById("menu").classList.toggle("open");
-  }
+<!-- Traductor -->
+<div id="google_translate_element" style="display:none;"></div>
 
-  function setLanguage(lang) {
-    alert(
-      lang === 'zh'
-        ? '语言将通过浏览器或翻译器自动调整。'
-        : 'El idioma se adaptará automáticamente según el navegador.'
-    );
-  }
+<script>
+function translatePage(lang) {
+  if (!lang) return;
+
+  const script = document.createElement("script");
+  script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+  document.body.appendChild(script);
+
+  window.googleTranslateElementInit = function () {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'es,en,fr,pt,it,de,zh-CN',
+      autoDisplay: false
+    }, 'google_translate_element');
+
+    setTimeout(() => {
+      const combo = document.querySelector("select.goog-te-combo");
+      if (combo) {
+        combo.value = lang;
+        combo.dispatchEvent(new Event("change"));
+      }
+    }, 800);
+  };
+}
 </script>
 
 </body>
