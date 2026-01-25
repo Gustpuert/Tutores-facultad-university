@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MagicBank Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:#070C2A;
+      --gold:#D6B15A;
+      --text:#EAEAEA;
+      --soft:#CFCFD6;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      font-family:Inter,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    .menu-btn{
+      position:fixed;
+      top:16px;
+      left:16px;
+      background:rgba(214,177,90,.25);
+      border:1px solid rgba(214,177,90,.6);
+      color:var(--gold);
+      padding:10px 16px;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+      z-index:1000;
+    }
+
+    .menu{
+      position:fixed;
+      top:0;
+      left:-280px;
+      width:260px;
+      height:100vh;
+      background:#070c2a;
+      padding:90px 20px;
+      transition:.3s;
+      z-index:999;
+    }
+
+    .menu.open{left:0}
+
+    .menu a{
+      display:block;
+      color:#ccc;
+      margin-bottom:14px;
+      text-decoration:none;
+    }
+
+    .menu a:hover{color:var(--gold)}
+
+    .overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.45);
+      display:none;
+      z-index:998;
+    }
+
+    .overlay.show{display:block}
+
+    main{
+      max-width:1100px;
+      margin:auto;
+      padding:120px 24px 60px;
+    }
+
+    h1{text-align:center;margin-bottom:16px}
+    .intro{text-align:center;color:var(--soft);max-width:850px;margin:auto;margin-bottom:60px}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.04);
+      border-radius:16px;
+      padding:26px;
+    }
+
+    .card h3{color:var(--gold);margin-bottom:12px}
+    .card p{color:var(--soft);margin-bottom:18px}
+
+    .btn{
+      background:var(--gold);
+      color:#111;
+      padding:12px 26px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      display:inline-block;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#aaa;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">☰ Menu</div>
+
+<div class="menu" id="menu">
+  <a href="#">Home</a>
+  <a href="https://academy.magicbank.org/">Academy</a>
+  <a href="https://magicbank.org/fabrica-de-tutores.html">Tutor Factory</a>
+
+  <hr style="margin:20px 0;opacity:.3">
+
+  <a href="#" onclick="setLang('en')">English</a>
+  <a href="#" onclick="setLang('es')">Español</a>
+  <a href="#" onclick="setLang('pt')">Português</a>
+  <a href="#" onclick="setLang('zh')">中文</a>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<main>
+  <h1 id="title">MagicBank Academy</h1>
+
+  <p class="intro" id="intro">
+    Advanced education with high-level tutors.  
+    Layered learning system with real understanding and continuous guidance.  
+    Students do not advance until knowledge is fully mastered.
+  </p>
+
+  <div class="grid">
+
+    <!-- ADMINISTRATION -->
+    <div class="card">
+      <h3 id="a1">Business Administration</h3>
+      <p id="a1t">
+        Comprehensive training focused on management, leadership, financial planning and strategic decision making.
+      </p>
+      <a class="btn" href="https://chatgpt.com/g/g-6934d1a2900c8191ab3aafa382225a65-superadministrador-magic-tutor-pro" target="_blank">Enter Tutor</a>
+    </div>
+
+    <!-- LAW -->
+    <div class="card">
+      <h3 id="a2">Law</h3>
+      <p id="a2t">
+        Legal education applied to real professional contexts, regulations and legal reasoning.
+      </p>
+      <a class="btn" href="https://chatgpt.com/g/g-69345443f0848191996abc2cf7cc9786-abogadus-magic-tutor-pro" target="_blank">Enter Tutor</a>
+    </div>
+
+    <!-- ACCOUNTING -->
+    <div class="card">
+      <h3 id="a3">Accounting</h3>
+      <p id="a3t">
+        Financial analysis, accounting systems, taxation and business control.
+      </p>
+      <a class="btn" href="https://chatgpt.com/g/g-6934af28002481919dd9799d7156869f-supercontador-magic-tutor-pro" target="_blank">Enter Tutor</a>
+    </div>
+
+    <!-- MARKETING -->
+    <div class="card">
+      <h3 id="a4">Digital Marketing</h3>
+      <p id="a4t">
+        Strategy, branding, growth and digital positioning.
+      </p>
+      <a class="btn" href="https://chatgpt.com/g/g-693703fa8a008191b91730375fcc4d64-supermarketer-magic-tutor-pro" target="_blank">Enter Tutor</a>
+    </div>
+
+    <!-- SOFTWARE -->
+    <div class="card">
+      <h3 id="a5">Software Development</h3>
+      <p id="a5t">
+        Programming, logic, architecture and real-world software development.
+      </p>
+      <a class="btn" href="https://chatgpt.com/g/g-69356a835d888191bf80e11a11e39e2e-super-desarrollador-magic-tutor-pro" target="_blank">Enter Tutor</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  © MagicBank Academy — Advanced education powered by AI
+</footer>
+
+<script>
+const T = {
+  en:{
+    title:"MagicBank Academy",
+    intro:"Advanced education with high-level tutors. Layered learning system with real understanding and continuous guidance. Students do not advance until knowledge is fully mastered.",
+    a1:"Business Administration",
+    a1t:"Comprehensive training focused on management, leadership, financial planning and strategic decision making.",
+    a2:"Law",
+    a2t:"Legal education applied to real professional contexts, regulations and legal reasoning.",
+    a3:"Accounting",
+    a3t:"Financial analysis, accounting systems, taxation and business control.",
+    a4:"Digital Marketing",
+    a4t:"Strategy, branding, growth and digital positioning.",
+    a5:"Software Development",
+    a5t:"Programming, logic, architecture and real-world software development."
+  },
+  es:{
+    title:"MagicBank Academy",
+    intro:"Educación avanzada con tutores de alto nivel. Sistema de aprendizaje por capas con comprensión real y acompañamiento continuo.",
+    a1:"Administración de Empresas",
+    a1t:"Formación integral en gestión, liderazgo, planeación financiera y toma de decisiones.",
+    a2:"Derecho",
+    a2t:"Formación jurídica aplicada a contextos profesionales reales.",
+    a3:"Contaduría",
+    a3t:"Contabilidad, análisis financiero y control empresarial.",
+    a4:"Marketing Digital",
+    a4t:"Estrategia, marca, crecimiento y posicionamiento digital.",
+    a5:"Desarrollo de Software",
+    a5t:"Programación, lógica y desarrollo de sistemas reales."
+  },
+  pt:{
+    title:"MagicBank Academy",
+    intro:"Educação avançada com tutores de alto nível e aprendizagem progressiva.",
+    a1:"Administração",
+    a1t:"Gestão, liderança e planejamento financeiro.",
+    a2:"Direito",
+    a2t:"Formação jurídica aplicada.",
+    a3:"Contabilidade",
+    a3t:"Finanças, impostos e controle empresarial.",
+    a4:"Marketing Digital",
+    a4t:"Crescimento, marca e estratégias digitais.",
+    a5:"Desenvolvimento de Software",
+    a5t:"Programação e arquitetura de sistemas."
+  },
+  zh:{
+    title:"魔法银行学院",
+    intro:"通过分层教学和真实理解的高端教育体系。",
+    a1:"工商管理",
+    a1t:"管理、领导力与财务规划。",
+    a2:"法律",
+    a2t:"应用法律与实践分析。",
+    a3:"会计",
+    a3t:"财务分析与会计管理。",
+    a4:"数字营销",
+    a4t:"品牌建设与市场增长。",
+    a5:"软件开发",
+    a5t:"编程、逻辑与系统开发。"
+  }
+};
+
+function setLang(l){
+  Object.keys(T[l]).forEach(id=>{
+    document.getElementById(id).innerText=T[l][id];
+  });
+  toggleMenu();
+}
+
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("open");
+  document.getElementById("overlay").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
